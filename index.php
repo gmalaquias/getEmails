@@ -33,7 +33,8 @@ if (is_array($out)) :
     for ($i = 0; $i < $count; ++$i):
         $email = $out[$i][0];
         $ex = explode("@",$email);
-        $result[$email] = $ex[1];
+        if(!(strpos($ex[1], 'facebook') !== FALSE))
+            $result[$email] = $ex[1];
     endfor;
 endif;
 
